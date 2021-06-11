@@ -6,6 +6,7 @@ def processing(totalCircle, data):
     unionSet = []
     totalSelectedPoint = []
     
+    # [Item 9] Avoid else Block after for and while Loops
     while len(unionSet) < len(data):
         # sort
         totalCircle.sort(key = lambda x:len(x[1]), reverse=True)
