@@ -14,7 +14,7 @@ def make_circle(ax, ay, data, radius : int):
         if(isInCircle(ax, ay, bx, by, radius)):
             #if ax == bx and ay == by:  # 중심점 제외
             #    continue
-            _circle.append(idx)
+            _circle.append(_)
            
     _info.append(_circle)
     
