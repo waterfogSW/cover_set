@@ -1,6 +1,7 @@
 def count_line():
     line_count = 0
 
+    # [Item 3]
     file = open("./Clustering.py", "r")
     for line in file:
         if line != "\n":
@@ -50,12 +51,6 @@ def count_line():
     file.close()
 
     file = open("./Mkdir.py", "r")
-    for line in file:
-        if line != "\n":
-            line_count += 1
-    file.close()
-
-    file = open("./Parse_csv.py", "r")
     for line in file:
         if line != "\n":
             line_count += 1

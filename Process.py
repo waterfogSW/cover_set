@@ -14,7 +14,9 @@ def processing(totalCircle, data):
         selectedPoint = totalCircle[0]
         
         # 좌표 append, 합집합 갱신
-        totalSelectedPoint, unionSet = update_unionSet(totalSelectedPoint, unionSet, selectedPoint)
+        # [Item 2]
+        totalSelectedPoint, unionSet = \
+            update_unionSet(totalSelectedPoint, unionSet, selectedPoint)
         
         # 처음 좌표의 리스트 기준으로 나머지 리스트 갱신
         totalCircle = update_data(unionSet, totalCircle, data)
