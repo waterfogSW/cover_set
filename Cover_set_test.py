@@ -5,7 +5,7 @@ from Scatter_circles import scatter_circles
 import numpy as np
 import timeit
 
-
+# [Item 24] Use None and Docstrings to Specify Dynamic Default Arguments
 def cover_set_test(start, end, path, P=None) :
     data = parse_csv(path)
     radius = range(start, end)
