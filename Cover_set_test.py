@@ -29,8 +29,8 @@ def cover_set_test(start, end, path, cluster_data=np.array([])) :
         total_area = (area[i]**2)*n
 
         print("┌─────────────────────────┐")
-        print("│radius : %-4d            │" % r)
-        print("│number of circles : %-4d │" % n)
-        print("│total area : %-4d        │" % total_area)
+        print("│radius : %-6d            │" % r)
+        print("│number of circles : %-6d │" % n)
+        print("│total area : %-6d        │" % total_area)
         print("└─────────────────────────┘")
         print()
