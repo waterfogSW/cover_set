@@ -18,9 +18,7 @@ def cover_set_test(start, end, path, cluster_data=np.array([])) :
     # Comprehension을 사용할 때에는 두 개 이상의 복잡한 연산을 수행하지 않는다.
 
     # [Item 6] Prefer Multiple Assignment Unapcking Over Indexing
-    # [Item 13] Prefer Catch-All Unpacking Over Slicing
     for i,r in enumerate(radius):
-    # radius enumerate의 정보를 i와 r로 나누어 loop합니다.
         print ("(%d: Creating a circle with radius %d...)" %(i, r))
 
         totalCircle = make_total_circle(r, data)
