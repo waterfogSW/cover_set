@@ -9,3 +9,4 @@ def scatter_circles(selected_point, radius, data):
         plt.scatter(Cx, Cy, color = 'k', marker = 'x', s = 10)
         ax_nstd.add_patch(plt.Circle((Cx, Cy), radius, color='g', alpha=0.3))
     plt.show()
+    plt.savefig('scatter.png')
