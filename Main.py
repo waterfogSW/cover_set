@@ -1,6 +1,6 @@
 from Cover_set_test import cover_set_test
 from Count_line import count_line
-from Clustering import *
+from Clustering import clustering
 
 import sys
 
