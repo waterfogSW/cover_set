@@ -25,7 +25,6 @@ def cover_set_test(start, end, path, cluster_data=np.array([])) :
         totalSelectedPoint = processing(totalCircle, data)
         scatter_circles(totalSelectedPoint, r, data, cluster_data)
 
-        cost_ratio = 1
         n = len(totalSelectedPoint)
         total_area = (area[i]**2)*n
 
