@@ -9,6 +9,8 @@ def scatter_circles(selected_point, radius, data, P):
     fig, ax_nstd = plt.subplots(figsize=(8, 8))
 
     if P is None:
+        # [Item 23] Provide Optional Behavior with Keyword Arguments
+        # matplot 라이브러리의 scatter함수는 keyword argumnet를 통해 직관적인 옵션을 제공합니다.
         plt.scatter(data['X'],data['Y'], s=5, alpha=0.7)
     else:
         plt.scatter(data['X'],data['Y'], s=5, alpha=0.7, c=P)
