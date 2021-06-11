@@ -2,15 +2,24 @@ from Pre_process import parse_csv
 from Make_total_circle import make_total_circle
 from Process import processing
 from Scatter_circles import scatter_circles
+import timeit
 
 def cover_set_test(start, end, path) :
+    data = parse_csv(path)
     for radius in range(start, end):
-        data = parse_csv(path)
+        print ("(Creating a circle with radius %d...)" %radius)
+
         totalCircle = make_total_circle(radius, data)
         totalSelectedPoint = processing(totalCircle)
-        print ("반지름 길이: {radius}인 원 생성, 선택된 점들".format(radius=radius))
-        print(totalSelectedPoint)
-
         scatter_circles(totalSelectedPoint, radius, data)
-        print("선택된 원의 갯수: {num}".format(num=len(totalSelectedPoint)))
-        print("\n\n")
+
+        cost_ratio = 1
+        n = len(totalSelectedPoint)
+        cost = n*radius*cost_ratio
+
+        print("┌─────────────────────────┐")
+        print("│radius : %-4d            │" % radius)
+        print("│number of circles : %-4d │" % n)
+        print("│cost : %-4d              │" % cost)
+        print("└─────────────────────────┘")
+        print()

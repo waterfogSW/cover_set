@@ -1,7 +1,10 @@
+from Mkdir import createFolder 
 import matplotlib.pyplot as plt
+
 # 시각화
 def scatter_circles(selected_point, radius, data):
-    title = './result/r_' + str(radius) + ".png"
+    createFolder("result")
+    title = './result/radius_' + str(radius) + ".png"
 
     fig, ax_nstd = plt.subplots(figsize=(8, 8))
 
