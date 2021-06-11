@@ -9,7 +9,7 @@ import timeit
 def cover_set_test(start, end, path, P=None) :
     data = parse_csv(path)
     radius = range(start, end)
-    # [Item 27] 
+    # [Item 27]
     # [Item 28]
     area =  [r**2 for r in radius]
     # map 대신 Comprehensions 사용. 
