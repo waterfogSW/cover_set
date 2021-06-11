@@ -6,6 +6,7 @@ def make_circle(ax, ay, data, radius : int):
     _info.append([ax, ay])
     _circle = []
     
+    # [item underscore]
     for _ in range(data['X'].size):
         bx = data.values[_][0]
         by = data.values[_][1]
