@@ -8,6 +8,6 @@ print("[developed version %s]" %sys.version)
 # sys 모듈을 활용하여 파이썬 버전출력
 
 print()
-print("Would you want Cluserting the data? [Y/n] ", end='')
+print("Would you want Clustering the data? [Y/n] ", end='')
 # [Item 05] Write Helper Functions Instead of Complex Expressions
 helper()

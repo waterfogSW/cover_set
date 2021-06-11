@@ -20,4 +20,6 @@ def scatter_circles(selected_point, radius, data, P):
         ax_nstd.add_patch(plt.Circle((Cx, Cy), radius,fill=False, alpha = 0.7))
             
     plt.show()
+    
+    # Linux에서는 plt.show()의 GUI를 지원하지 않아 result폴더에 따로 결과를 저장함.
     plt.savefig(title)
