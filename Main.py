@@ -9,6 +9,5 @@ print("[developed version %s]" %sys.version)
 
 print()
 print("Would you want Cluserting the data? [Y/n] ", end='')
-c = input()
 # [Item 05] Write Helper Functions Instead of Complex Expressions
-helper(c)
+helper()
