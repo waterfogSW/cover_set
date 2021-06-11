@@ -8,7 +8,7 @@ def scatter_circles(selected_point, radius, data, P):
 
     fig, ax_nstd = plt.subplots(figsize=(8, 8))
 
-    if P.size == 0:
+    if P is None:
         plt.scatter(data['X'],data['Y'], s=5, alpha=0.7)
     else:
         plt.scatter(data['X'],data['Y'], s=5, alpha=0.7, c=P)
