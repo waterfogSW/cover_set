@@ -5,10 +5,8 @@ from Scatter_circles import scatter_circles
 import numpy as np
 import timeit
 
-# [Item 23] Provide Optional Behavior with Keyword Arguments
-# 3번째 인자에 P=np.array([])와 같이 Keyword argument를 지정하여 
-# 함수 사용시에 인자로 어떤 값이 들어가야 하는지 직관적으로 이해할 수 있도록 하였습니다.
-def cover_set_test(start, end, path, cluster_data=np.array([])) :
+
+def cover_set_test(start, end, path, P=None) :
     data = parse_csv(path)
     radius = range(start, end)
     # [Item 27] 
@@ -23,7 +21,7 @@ def cover_set_test(start, end, path, cluster_data=np.array([])) :
 
         totalCircle = make_total_circle(r, data)
         totalSelectedPoint = processing(totalCircle, data)
-        scatter_circles(totalSelectedPoint, r, data, cluster_data)
+        scatter_circles(totalSelectedPoint, r, data, P)
 
         n = len(totalSelectedPoint)
         total_area = (area[i]**2)*n
