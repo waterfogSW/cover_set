@@ -13,6 +13,8 @@ def update_data(unionSet, totalCircle,data):
         _temp.append(totalCircle[idx][0])
         _temp.append(tempSet)
         
+        # [Item 30] Consider Generators instead of Returning Lists
         newTotalCircle.append(_temp)
+        # append함수를 사용하여 리스트에 내용 추가
         
     return newTotalCircle
