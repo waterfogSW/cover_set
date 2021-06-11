@@ -26,7 +26,7 @@ def clustering(start, end, path):
     plt.show()
     createFolder("result")
 
-    # Linux에서는 plt.show()의 GUI를 지원하지 않아 result폴더에 따로 결과를 저장함.
+    # Linux shell에서는 plt.show()의 GUI를 지원하지 않아 result폴더에 따로 결과를 저장함.
     plt.savefig('./result/scatter.png')
 
     cluster = pd.DataFrame(P, columns = ['cluster'])
