@@ -12,7 +12,7 @@ print("Would you want Cluserting the data? [Y/n] ", end='')
 c = input()
 
 if (c == 'n'):
-    cover_set_test(1, 15, "scp_data.csv")
+    cover_set_test(1, 15, "./data/scp_data.csv")
 else:
-    clustering(1, 15, "scp_data.csv")
+    clustering(1, 15, "./data/scp_data.csv")
 
