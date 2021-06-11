@@ -10,9 +10,9 @@ print("[developed version %s]" %sys.version)
 
 print()
 print("Would you want Cluserting the data? [Y/n] ", end='')
-c = input()
 
-if (c == 'n'):
+# [Item 10] Prevent Repetition with Assignment Expressions
+if ((c := input()) == 'n'):
     cover_set_test(2, 15, "./data/scp_data.csv")
 else:
     clustering(2, 15, "./data/scp_data.csv")
