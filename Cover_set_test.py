@@ -10,20 +10,28 @@ import timeit
 # 함수 사용시에 인자로 어떤 값이 들어가야 하는지 직관적으로 이해할 수 있도록 하였습니다.
 def cover_set_test(start, end, path, cluster_data=np.array([])) :
     data = parse_csv(path)
-    for radius in range(start, end):
-        print ("(Creating a circle with radius %d...)" %radius)
+    radius = range(start, end)
+    # [Item 27]
+    # [Item 28]
+    area =  [r**2 for r in radius]
+    # map 대신 Comprehensions 사용. 
+    # Comprehension을 사용할 때에는 두 개 이상의 복잡한 연산을 수행하지 않는다.
 
-        totalCircle = make_total_circle(radius, data)
+    # [Item 6] Prefer Multiple Assignment Unapcking Over Indexing
+    for i,r in enumerate(radius):
+        print ("(%d: Creating a circle with radius %d...)" %(i, r))
+
+        totalCircle = make_total_circle(r, data)
         totalSelectedPoint = processing(totalCircle, data)
-        scatter_circles(totalSelectedPoint, radius, data, cluster_data)
+        scatter_circles(totalSelectedPoint, r, data, cluster_data)
 
         cost_ratio = 1
         n = len(totalSelectedPoint)
-        cost = n*radius*cost_ratio
+        total_area = (area[i]**2)*n
 
         print("┌─────────────────────────┐")
-        print("│radius : %-4d            │" % radius)
+        print("│radius : %-4d            │" % r)
         print("│number of circles : %-4d │" % n)
-        print("│cost : %-4d              │" % cost)
+        print("│total area : %-4d        │" % total_area)
         print("└─────────────────────────┘")
         print()
