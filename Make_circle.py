@@ -1,7 +1,9 @@
 from Euclid_dist import isInCircle
 # 각 점을 중심점 삼아 'radius'길이의 반지름을 갖는 원을 생성한다. 
 # 생성된 원은 _circle 리스트에 전달(각 원은 리스트 형태이고, 원 안의 점들(인덱스)이 포함된다.)
-def make_circle(ax, ay, data, radius):
+# [Item 2] Follow the PEP8 style guide as possible as you can
+# type annotation을 통해 radius의 자료형 명시
+def make_circle(ax, ay, data, radius : int):
     _info = []
     _info.append([ax, ay])
     _circle = []
