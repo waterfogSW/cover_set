@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from Cover_set_test import cover_set_test
-from Parse_csv import parse_csv
+from Pre_process import parse_csv
 from Kmeans import kmeans
 from Mkdir import createFolder 
 

@@ -55,12 +55,6 @@ def count_line():
             line_count += 1
     file.close()
 
-    file = open("./Parse_csv.py", "r")
-    for line in file:
-        if line != "\n":
-            line_count += 1
-    file.close()
-
     file = open("./Pre_process.py", "r")
     for line in file:
         if line != "\n":
