@@ -5,7 +5,10 @@ from Scatter_circles import scatter_circles
 import numpy as np
 import timeit
 
-def cover_set_test(start, end, path, P=np.array([])) :
+# [Item 24]
+def cover_set_test(start, end, path, P=None) :
+# 디폴트 값을 지정할 때는 [], {}와 같은 mutable 한 애들은 쓰면 안된다.
+# None 을 사용함.
     data = parse_csv(path)
     for radius in range(start, end):
         print ("(Creating a circle with radius %d...)" %radius)
