@@ -16,6 +16,7 @@ def cover_set_test(start, end, path, P=None) :
     # Comprehension을 사용할 때에는 두 개 이상의 복잡한 연산을 수행하지 않는다.
 
     # [Item 6] Prefer Multiple Assignment Unapcking Over Indexing
+    # [Item 7] Prefer enumerate Over range
     for i,r in enumerate(radius):
         print ("(%d: Creating a circle with radius %d...)" %(i, r))
 
