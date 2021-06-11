@@ -1,32 +1,9 @@
-import numpy as np
 import pandas as pd
-from scipy.spatial import distance
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from Cover_set_test import cover_set_test
-
-def parse_csv(path : str):
-    scp_df = pd.read_csv(path)
-    scp_df = scp_df.rename(columns={'X0':'X'})
-    scp_df = scp_df.rename(columns={'X1':'Y'})
-    return scp_df
-
-def kmeans(loc,k=3,max_iterations=100):
-    '''
-    loc: Police office location data
-    k: number of clusters
-    max_iterations: number of repetitions before clusters are established
-    '''
-    if isinstance(loc, pd.DataFrame):loc = loc.values
-    idx = np.random.choice(len(loc), k, replace=False)
-    centroids = loc[idx, :]
-    P = np.argmin(distance.cdist(loc, centroids, 'euclidean'),axis=1)
-    for _ in range(max_iterations):
-        centroids = np.vstack([loc[P==i,:].mean(axis=0) for i in range(k)])
-        tmp = np.argmin(distance.cdist(loc, centroids, 'euclidean'),axis=1)
-        if np.array_equal(P,tmp):break
-        P = tmp
-    return P
+from Parse_csv import parse_csv
+from Kmeans import kmeans
 
 def clustering(start, end, path):
     df = parse_csv(path)

@@ -25,6 +25,12 @@ def count_line():
             line_count += 1
     file.close()
 
+    file = open("./Kmeans.py", "r")
+    for line in file:
+        if line != "\n":
+            line_count += 1
+    file.close()
+
     file = open("./Main.py", "r")
     for line in file:
         if line != "\n":
@@ -44,6 +50,12 @@ def count_line():
     file.close()
 
     file = open("./Mkdir.py", "r")
+    for line in file:
+        if line != "\n":
+            line_count += 1
+    file.close()
+
+    file = open("./Parse_csv.py", "r")
     for line in file:
         if line != "\n":
             line_count += 1
