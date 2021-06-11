@@ -4,6 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from Cover_set_test import cover_set_test
 from Parse_csv import parse_csv
 from Kmeans import kmeans
+from Mkdir import createFolder 
 
 def clustering(start, end, path):
     df = parse_csv(path)
@@ -23,6 +24,7 @@ def clustering(start, end, path):
     plt.subplots(figsize=(8, 8))
     plt.scatter(loc[:,0],loc[:,1],c=P)
     plt.show()
+    createFolder("result")
     plt.savefig('./result/scatter.png')
 
     cluster = pd.DataFrame(P, columns = ['cluster'])
