@@ -56,4 +56,4 @@ def clustering(start, end, path):
     for i in range(0, cluster_num):
         df_arr.append(groups.get_group(i))
     
-    cover_set_test(start,end,path)
+    cover_set_test(start,end,path, P=P)

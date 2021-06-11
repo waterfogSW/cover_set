@@ -2,9 +2,10 @@ from Pre_process import parse_csv
 from Make_total_circle import make_total_circle
 from Process import processing
 from Scatter_circles import scatter_circles
+import numpy as np
 import timeit
 
-def cover_set_test(start, end, path, P=None) :
+def cover_set_test(start, end, path, P=np.array([])) :
     data = parse_csv(path)
     for radius in range(start, end):
         print ("(Creating a circle with radius %d...)" %radius)
