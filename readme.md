@@ -1,3 +1,8 @@
+```
+$ chmod +x clear.sh
+$ ./count.sh
+```
+
 v1
 genCircle - 점 으로부터 원 만들기
 
