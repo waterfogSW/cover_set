@@ -1,6 +1,7 @@
 def count_line():
     line_count = 0
 
+    # [Item 3]
     file = open("./Clustering.py", "r")
     for line in file:
         if line != "\n":
