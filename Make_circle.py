@@ -6,9 +6,9 @@ def make_circle(ax, ay, data, radius : int):
     _info.append([ax, ay])
     _circle = []
     
-    for idx in range(data['X'].size):
-        bx = data.values[idx][0]
-        by = data.values[idx][1]
+    for _ in range(data['X'].size):
+        bx = data.values[_][0]
+        by = data.values[_][1]
         
         if(isInCircle(ax, ay, bx, by, radius)):
             #if ax == bx and ay == by:  # 중심점 제외
