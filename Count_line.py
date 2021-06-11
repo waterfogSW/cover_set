@@ -1,6 +1,12 @@
 def count_line():
     line_count = 0
 
+    file = open("./Clustering.py", "r")
+    for line in file:
+        if line != "\n":
+            line_count += 1
+    file.close()    
+
     file = open("./Count_line.py", "r")
     for line in file:
         if line != "\n":
@@ -26,6 +32,12 @@ def count_line():
     file.close()
 
     file = open("./Make_total_circle.py", "r")
+    for line in file:
+        if line != "\n":
+            line_count += 1
+    file.close()
+    
+    file = open("./Make_circle.py", "r")
     for line in file:
         if line != "\n":
             line_count += 1

@@ -1,9 +1,9 @@
 # 데이터 갱신(이미 선택된 점들 제거)
-def update_data(unionSet, totalCircle):
+def update_data(unionSet, totalCircle,data):
     newTotalCircle = []
     unionSet = set(unionSet)
     
-    for idx in range(500):
+    for idx in range(len(data)):
         tempSet = set(totalCircle[idx][1])
         
         tempSet = tempSet - unionSet

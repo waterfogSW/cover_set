@@ -3,21 +3,13 @@ import pandas as pd
 from scipy.spatial import distance
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
+from Cover_set_test import cover_set_test
 
 def parse_csv(path : str):
     scp_df = pd.read_csv(path)
     scp_df = scp_df.rename(columns={'X0':'X'})
     scp_df = scp_df.rename(columns={'X1':'Y'})
     return scp_df
-
-df = parse_csv("./scp_data.csv")
-df.head()
-
-# normalize data
-loc = df.values
-sc = StandardScaler()
-sc.fit(loc)
-loc = sc.transform(loc)
 
 def kmeans(loc,k=3,max_iterations=100):
     '''
@@ -36,23 +28,32 @@ def kmeans(loc,k=3,max_iterations=100):
         P = tmp
     return P
 
-cluster_num = 3
-P = kmeans(loc,cluster_num)
+def clustering(start, end, path):
+    df = parse_csv(path)
 
-assert len(df) == len(P)
-# denormalize data
-loc = sc.inverse_transform(loc)
-plt.subplots(figsize=(8, 8))
-plt.scatter(loc[:,0],loc[:,1],c=P)
-plt.show()
+    # normalize data
+    loc = df.values
+    sc = StandardScaler()
+    sc.fit(loc)
+    loc = sc.transform(loc)
 
-cluster = pd.DataFrame(P, columns = ['cluster'])
-df['cluster'] = cluster
-df.head()
+    cluster_num = 3
+    P = kmeans(loc,cluster_num)
 
-groups = df.groupby(df.cluster)
-df_arr = []
-for i in range(0, cluster_num):
-    df_arr.append(groups.get_group(i))
+    assert len(df) == len(P)
+    # denormalize data
+    loc = sc.inverse_transform(loc)
+    plt.subplots(figsize=(8, 8))
+    plt.scatter(loc[:,0],loc[:,1],c=P)
+    plt.show()
+    plt.savefig('./result/scatter.png')
 
-print(type(df_arr[0]))
+    cluster = pd.DataFrame(P, columns = ['cluster'])
+    df['cluster'] = cluster
+
+    groups = df.groupby(df.cluster)
+    df_arr = []
+    for i in range(0, cluster_num):
+        df_arr.append(groups.get_group(i))
+    
+    cover_set_test(start,end,path)
